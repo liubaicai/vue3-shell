@@ -2,7 +2,7 @@
    <img width="150" height="150" src="https://i.ibb.co/MnVpyfF/logo.png" />
 </p>
 
-# vue-shell
+# vue3-shell
 
 <p align="center">
    <img src="https://i.ibb.co/vx89DKg/vue-shell.gif" />
@@ -12,7 +12,7 @@
 
 ## What is this ?
 
-vue-shell is a component vuejs to provides an easy way to create a terminal on your application and then add your own philosophy by adding all the commands you want with their rendering in the output.
+vue3-shell is a component vuejs to provides an easy way to create a terminal on your application and then add your own philosophy by adding all the commands you want with their rendering in the output.
 
 - Navigate the history with **key-up** | **key-down**
 
@@ -32,13 +32,15 @@ vue-shell is a component vuejs to provides an easy way to create a terminal on y
 ## Installation 
 
 ```
-npm i vue-shell --save
+npm i vue3-shell --save
 ```
 
 ```js
-import Vue from "vue";
-import shell from 'vue-shell'
-Vue.use(shell);
+import { createApp } from "vue";
+import shell from 'vue3-shell'
+
+const app = createApp(App);
+app.use(shell);
 ```
 
 ```vue
@@ -105,7 +107,7 @@ export default {
   methods: {
     prompt(value) {
       if (value == "node -v") {
-        this.send_to_terminal = process.versions.node;
+        this.send_to_terminal = "v14.12.3";
       }
     }
   }

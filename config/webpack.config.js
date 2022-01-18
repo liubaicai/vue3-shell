@@ -1,44 +1,37 @@
-const path = require('path');
-const VueLoaderPlugin = require('vue-loader/lib/plugin')
+const path = require("path");
+// const VueLoaderPlugin = require('vue-loader/lib/plugin')
+const { VueLoaderPlugin } = require("vue-loader");
 
 module.exports = {
-  entry: path.resolve(__dirname + './../src/index.js'),
+  entry: path.resolve(__dirname + "./../src/index.js"),
   output: {
-    path: path.resolve(__dirname + './../dist'),
-    filename: 'v-shell.js'
+    path: path.resolve(__dirname + "./../dist"),
+    filename: "v-shell.js",
   },
   resolve: {
     alias: {
-      "@": path.resolve(__dirname, 'src/assets'),
-    }
+      "@": path.resolve(__dirname, "src/assets"),
+    },
   },
   module: {
-    rules: [{
+    rules: [
+      {
         test: /\.js$/,
-        use: 'babel-loader'
+        use: "babel-loader",
       },
       {
         test: /\.vue$/,
-        use: 'vue-loader'
+        use: "vue-loader",
       },
       {
         test: /\.css$/,
-        use: [
-          'vue-style-loader',
-          'css-loader'
-        ]
+        use: ["vue-style-loader", "css-loader"],
       },
       {
         test: /\.s[ac]ss$/i,
-        use: [
-          'style-loader',
-          'css-loader',
-          'sass-loader',
-        ]
+        use: ["style-loader", "css-loader", "sass-loader"],
       },
-    ]
+    ],
   },
-  plugins: [
-    new VueLoaderPlugin()
-  ]
-}
+  plugins: [new VueLoaderPlugin()],
+};
